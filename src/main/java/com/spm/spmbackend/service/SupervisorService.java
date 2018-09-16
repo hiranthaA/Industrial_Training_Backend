@@ -9,5 +9,6 @@ public interface SupervisorService {
 	List<Supervisor> getall();
 	Supervisor addSupervisor(Supervisor s);
 	Supervisor getSupervisorByEmail(String email);
+	List<Supervisor> getSupervisorByCompany(String company);
 
 }
