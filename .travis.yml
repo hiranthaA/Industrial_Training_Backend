@@ -8,9 +8,8 @@ services :
 script:
 - mvn test
 deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: e9b8fd2bcc69b020158890b8be442d5762694c5b
-  keep-history: true
-  on:
-    branch: master
+  provider: heroku
+  api_key:
+    secure: "e92d04de-4c24-468f-a731-35091882fb62"
+    
+    
