@@ -33,7 +33,7 @@ public class CompanyController {
 		
 	}
 	
-	@RequestMapping(value="/test", method = RequestMethod.GET)
+	@RequestMapping(value="/testapi", method = RequestMethod.GET)
 	public String test(){
 			return  "hello, this is from company controller";
 	}
