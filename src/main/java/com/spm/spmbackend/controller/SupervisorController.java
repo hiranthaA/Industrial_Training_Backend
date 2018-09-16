@@ -38,7 +38,10 @@ public class SupervisorController {
 		System.out.println(email);
 		return  superservice.getSupervisorByEmail(email);
 		//return c;
-		
-		
+	}
+	
+	@RequestMapping(value="/getsupervisors/{company}", method=RequestMethod.GET)
+	public List<Supervisor> getSupervisorsByCompany(@PathVariable("company") String company) {
+		return  superservice.getSupervisorByCompany(company);
 	}
 }

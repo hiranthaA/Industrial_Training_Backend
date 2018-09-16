@@ -29,5 +29,10 @@ public class SupervisorServiceImpl implements SupervisorService {
 	public Supervisor getSupervisorByEmail(String email) {
 		return superrepo.findOneByEmail(email);
 	}
+
+	@Override
+	public List<Supervisor> getSupervisorByCompany(String company) {
+		return superrepo.findAllByCompanyid(company);
+	}
 	
 }
