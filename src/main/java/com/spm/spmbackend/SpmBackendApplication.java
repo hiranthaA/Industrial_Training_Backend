@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpmbackendApplication {
+public class SpmBackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpmbackendApplication.class, args);
+		SpringApplication.run(SpmBackendApplication.class, args);
 	}
 }
