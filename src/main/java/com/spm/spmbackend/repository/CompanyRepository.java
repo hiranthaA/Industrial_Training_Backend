@@ -8,5 +8,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 @Repository
 public interface CompanyRepository extends MongoRepository<Company, String>{
-	
+	Company findOneByCmpId(String id);
 }

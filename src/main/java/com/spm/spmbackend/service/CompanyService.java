@@ -5,7 +5,8 @@ import com.spm.spmbackend.model.Company;
 
 public interface CompanyService {
 	
-	public List<Company> getCompany();
-	public Company addCompany(Company c) ;
+	List<Company> getCompany();
+	Company addCompany(Company c);
+	Company getCompanyByID(String id);
 	
 }

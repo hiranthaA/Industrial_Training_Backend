@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,10 +34,14 @@ public class CompanyController {
 		
 	}
 	
+	@RequestMapping(value="/getcompany/{id}", method = RequestMethod.GET)
+	public Company getCompanyByID(@PathVariable String id){
+			return  compservice.getCompanyByID(id);
+	}
+	
 	@RequestMapping(value="/testapi", method = RequestMethod.GET)
 	public String test(){
 			return  "hello, this is from company controller";
 	}
-	
 	
 }

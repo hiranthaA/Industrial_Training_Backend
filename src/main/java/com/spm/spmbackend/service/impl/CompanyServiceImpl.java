@@ -24,5 +24,10 @@ public class CompanyServiceImpl implements CompanyService {
 		return comprepo.insert(c);
 		
 	}
+
+	@Override
+	public Company getCompanyByID(String id) {
+		return comprepo.findOneByCmpId(id);
+	}
 	
 }
