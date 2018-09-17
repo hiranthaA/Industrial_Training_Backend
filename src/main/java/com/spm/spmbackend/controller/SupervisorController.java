@@ -44,4 +44,9 @@ public class SupervisorController {
 	public List<Supervisor> getSupervisorsByCompany(@PathVariable("company") String company) {
 		return  superservice.getSupervisorByCompany(company);
 	}
+	
+	@RequestMapping(value="/getsupervisor/{id}", method=RequestMethod.GET)
+	public Supervisor getSupervisorById(@PathVariable("id") String id) {
+		return  superservice.getSupervisorById(id);
+	}
 }

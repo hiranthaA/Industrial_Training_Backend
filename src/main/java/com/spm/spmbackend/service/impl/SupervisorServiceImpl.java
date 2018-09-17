@@ -34,5 +34,10 @@ public class SupervisorServiceImpl implements SupervisorService {
 	public List<Supervisor> getSupervisorByCompany(String company) {
 		return superrepo.findAllByCompanyid(company);
 	}
+
+	@Override
+	public Supervisor getSupervisorById(String id) {
+		return superrepo.findOneById(id);
+	}
 	
 }
