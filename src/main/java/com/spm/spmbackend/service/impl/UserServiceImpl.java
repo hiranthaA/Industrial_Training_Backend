@@ -23,4 +23,11 @@ public class UserServiceImpl implements UserService {
 		return userepo.findOneByEmailAndPassword(username, password);
 	}
 
+	@Override
+	public User updateUser(User u) {
+		User current = userepo.findOneById(u.getId());
+		current.setEmail(u.getEmail());
+		return userepo.save(current);
+	}
+
 }

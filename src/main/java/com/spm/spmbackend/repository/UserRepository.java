@@ -6,4 +6,5 @@ import com.spm.spmbackend.model.User;
 
 public interface UserRepository extends MongoRepository<User,Integer> {
 	User findOneByEmailAndPassword(String email, String password);
+	User findOneById(String id);
 }

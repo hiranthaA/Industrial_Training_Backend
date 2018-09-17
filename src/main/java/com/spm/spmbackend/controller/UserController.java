@@ -30,5 +30,9 @@ public class UserController {
 		return usservice.getUserByNameAndPassword(username, password);
 	}
 	
+	@RequestMapping(value="/updateUser", method=RequestMethod.POST)
+	public User updateUser(@RequestBody User u) {
+		return usservice.updateUser(u);
+	}
 	
 }

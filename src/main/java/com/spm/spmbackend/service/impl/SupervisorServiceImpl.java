@@ -22,7 +22,7 @@ public class SupervisorServiceImpl implements SupervisorService {
 
 	@Override
 	public Supervisor addSupervisor(Supervisor s) {
-		return superrepo.insert(s);
+		return superrepo.save(s);
 	}
 
 	@Override
