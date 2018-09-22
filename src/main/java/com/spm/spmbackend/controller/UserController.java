@@ -35,4 +35,9 @@ public class UserController {
 		return usservice.updateUser(u);
 	}
 	
+	@RequestMapping(value="/deleteUser/{id}", method=RequestMethod.GET)
+	public boolean deleteUser(@PathVariable("id") String id) {
+		return usservice.deleteUser(id);
+	}
+	
 }

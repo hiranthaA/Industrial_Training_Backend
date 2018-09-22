@@ -7,4 +7,5 @@ public interface UserService {
 	public User addUser(User u);
 	public User getUserByNameAndPassword(String email, String password);
 	User updateUser(User u);
+	boolean deleteUser(String id);
 }
