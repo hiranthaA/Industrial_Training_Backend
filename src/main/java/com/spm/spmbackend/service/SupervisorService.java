@@ -11,5 +11,7 @@ public interface SupervisorService {
 	Supervisor getSupervisorByEmail(String email);
 	List<Supervisor> getSupervisorByCompany(String company);
 	Supervisor getSupervisorById(String id);
+	boolean finddeleteSupervisor(String id);
+	boolean deleteSupervisorById(String id);
 
 }

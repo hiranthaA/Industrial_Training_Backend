@@ -39,5 +39,31 @@ public class SupervisorServiceImpl implements SupervisorService {
 	public Supervisor getSupervisorById(String id) {
 		return superrepo.findOneById(id);
 	}
+
+	@Override
+	public boolean deleteSupervisorById(String id) {
+		try {
+			superrepo.deleteOneById(id);
+			return true;
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			return false;
+		}
+		
+		//superrepo.findOneAndDeleteById(id);
+		//return null;
+	}
+
+	@Override
+	public boolean finddeleteSupervisor(String id) {
+		Long res = superrepo.deleteOneById(id);
+		if(res==0) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
 	
 }

@@ -49,4 +49,10 @@ public class SupervisorController {
 	public Supervisor getSupervisorById(@PathVariable("id") String id) {
 		return  superservice.getSupervisorById(id);
 	}
+
+	@RequestMapping(value="/deletesupervisor/{id}", method=RequestMethod.GET)
+	public boolean finddeleteSupervisor(@PathVariable("id") String id) {
+		System.out.println(id);
+		return  superservice.finddeleteSupervisor(id);
+	}
 }

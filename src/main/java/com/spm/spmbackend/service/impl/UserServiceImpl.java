@@ -30,4 +30,15 @@ public class UserServiceImpl implements UserService {
 		return userepo.save(current);
 	}
 
+	@Override
+	public boolean deleteUser(String id) {
+		Long res = userepo.deleteOneById(id);
+		if(res==0) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+
 }
