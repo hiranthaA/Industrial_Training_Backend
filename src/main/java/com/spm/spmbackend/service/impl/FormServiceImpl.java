@@ -25,6 +25,12 @@ public class FormServiceImpl implements FormService {
 		return formi1Repo.insert(c);
 		
 	}
+	;
+
+	@Override
+	public Form_i_1 getFormI1ByFormId(String id) {
+		return formi1Repo.findOneByFormId(id);
+	}
 
 	@Override
 	public Form_i_1 getFormi1ByStudentID(String studentID) {
