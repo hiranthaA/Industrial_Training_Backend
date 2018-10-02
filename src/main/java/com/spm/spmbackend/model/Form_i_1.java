@@ -24,10 +24,12 @@ public class Form_i_1 {
 	private double cgpa;
 
 	private String companyName;
+	private String companyContact;
 	private String companyAddres;
 
 	private String supervisorName;
 	private String supervisorTitle;
+	private String supervisorDesignation;
 	private String supervisorPhone;
 	private String supervisorEmail;
 
@@ -43,6 +45,34 @@ public class Form_i_1 {
 
 	public String getFormId() {
 		return formId;
+	}
+
+	/**
+	 * @return the companyContact
+	 */
+	public String getCompanyContact() {
+		return companyContact;
+	}
+
+	/**
+	 * @param companyContact the companyContact to set
+	 */
+	public void setCompanyContact(String companyContact) {
+		this.companyContact = companyContact;
+	}
+
+	/**
+	 * @return the supervisorDesignation
+	 */
+	public String getSupervisorDesignation() {
+		return supervisorDesignation;
+	}
+
+	/**
+	 * @param supervisorDesignation the supervisorDesignation to set
+	 */
+	public void setSupervisorDesignation(String supervisorDesignation) {
+		this.supervisorDesignation = supervisorDesignation;
 	}
 
 	public void setFormId(String formId) {

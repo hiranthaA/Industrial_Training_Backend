@@ -5,5 +5,5 @@ import com.spm.spmbackend.model.Student;
 
 @Repository
 public interface StudentRepository  extends MongoRepository<Student, String> {
-
+    Student findByid(String id);
 }
