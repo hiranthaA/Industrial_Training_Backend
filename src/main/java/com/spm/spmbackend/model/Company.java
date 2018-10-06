@@ -11,10 +11,32 @@ public class Company {
 	private String cmpName;
 	private String password;
 	private String contact;
+	private String contact2;
+	private String fax1;
+	private String fax2;
 	private String email;
 	private String address;
 	
 	
+	
+	public String getContact2() {
+		return contact2;
+	}
+	public void setContact2(String contact2) {
+		this.contact2 = contact2;
+	}
+	public String getFax1() {
+		return fax1;
+	}
+	public void setFax1(String fax1) {
+		this.fax1 = fax1;
+	}
+	public String getFax2() {
+		return fax2;
+	}
+	public void setFax2(String fax2) {
+		this.fax2 = fax2;
+	}
 	public String getCmpId() {
 		return cmpId;
 	}

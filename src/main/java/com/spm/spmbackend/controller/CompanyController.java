@@ -34,6 +34,11 @@ public class CompanyController {
 		
 	}
 	
+	@RequestMapping(value="/get/{email}", method = RequestMethod.GET)
+	public Company getCompanyByEmail(@PathVariable("email") String email){
+			return  compservice.getCompanyByEmail(email);
+	}
+	
 	@RequestMapping(value="/getcompany/{id}", method = RequestMethod.GET)
 	public Company getCompanyByID(@PathVariable("id") String id){
 			return  compservice.getCompanyByID(id);

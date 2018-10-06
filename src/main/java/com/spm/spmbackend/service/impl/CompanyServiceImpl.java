@@ -21,13 +21,18 @@ public class CompanyServiceImpl implements CompanyService {
 	@Override
 	public Company addCompany(Company c) {
 		System.out.println("this is impl"+c.getAddress());
-		return comprepo.insert(c);
+		return comprepo.save(c);
 		
 	}
 
 	@Override
 	public Company getCompanyByID(String id) {
 		return comprepo.findOneByCmpId(id);
+	}
+	
+	@Override
+	public Company getCompanyByEmail(String email) {
+		return comprepo.findOneByEmail(email);
 	}
 	
 }

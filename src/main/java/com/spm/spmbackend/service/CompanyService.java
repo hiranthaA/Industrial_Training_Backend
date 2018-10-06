@@ -7,6 +7,7 @@ public interface CompanyService {
 	
 	List<Company> getCompany();
 	Company addCompany(Company c);
+	Company getCompanyByEmail(String email);
 	Company getCompanyByID(String id);
 	
 }
