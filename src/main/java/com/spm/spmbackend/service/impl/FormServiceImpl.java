@@ -35,7 +35,7 @@ public class FormServiceImpl implements FormService {
 			exists.setStudentId(c.getStudentId());
 			c=exists;
 		}
-		return formi1Repo.insert(c);
+		return formi1Repo.save(c);
 		
 	}
 	;
