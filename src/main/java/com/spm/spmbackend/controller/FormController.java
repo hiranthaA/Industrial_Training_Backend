@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spm.spmbackend.model.Form_i_1;
+import com.spm.spmbackend.model.Form_i_3;
 import com.spm.spmbackend.service.FormService;;
 
 @RestController
@@ -88,7 +89,19 @@ public class FormController {
 	}
 	
 	
+	@RequestMapping(value="/formi3", method = RequestMethod.GET)
+	public List<Form_i_3> getFormI3(){
+			return  formservise.getFormi3();
+	}
 	
+	@RequestMapping(value="/formi3", method=RequestMethod.POST)
+	public Form_i_3 addFormI3(@RequestBody Form_i_3 c) {
+		System.out.println(c.getStudentId());
+		return formservise.addFormi3(c);
+		//return c;
+		
+		
+	}
 	
 	
 	
