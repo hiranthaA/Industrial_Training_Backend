@@ -22,7 +22,20 @@ public class FormServiceImpl implements FormService {
 	@Override
 	public Form_i_1 addFormi1(Form_i_1 c) {
 		System.out.println("this is impl"+c.getStudentId());
-		return formi1Repo.insert(c);
+		Form_i_1 exists =  formi1Repo.findOneByStudentEmail(c.getStudentEmail());
+		if(exists!=null){
+			exists.setCgpa(c.getCgpa());
+			exists.setSemester(c.getSemester());
+			exists.setStudentName(c.getStudentName());
+			exists.setStudentAddress(c.getStudentAddress());
+			exists.setStudentMobilePhone(c.getStudentMobilePhone());
+			exists.setStudentHomePhone(c.getStudentHomePhone());
+			exists.setSupervisorEmail(c.getSupervisorEmail());
+			exists.setYear(c.getYear());
+			exists.setStudentId(c.getStudentId());
+			c=exists;
+		}
+		return formi1Repo.save(c);
 		
 	}
 	;
