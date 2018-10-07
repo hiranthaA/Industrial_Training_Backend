@@ -130,9 +130,6 @@ public class FormController {
 
 		// setting student names
 		List<Form_i_3> formList = formservise.getFormi3BystatusAndsupervisorEmail(status,supID);
-		for (Form_i_3 form:formList) {
-			form.setStudentName(studentService.getSudentByEmail(form.getStudentEmail()).getStudentName());
-		}
 
 		return formList ;
 		//return c;
