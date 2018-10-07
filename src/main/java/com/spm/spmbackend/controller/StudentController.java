@@ -25,12 +25,22 @@ public class StudentController {
 		return studentService.getall();
 	}
 	
+	@RequestMapping(value="/get/{email}", method = RequestMethod.GET)
+	public Student getOneByEmail(@PathVariable("email") String email){
+		return studentService.getStudentByEmail(email);
+	}
+	
+	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public Student addStudent(@RequestBody Student s) {
 		System.out.println(s.getEmail());
-		return studentService.addStudent(s);
-		
-		
+		return studentService.addStudent(s);		
+	}
+	
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	public Student updateStudent(@RequestBody Student s) {
+		System.out.println(s.getEmail());
+		return studentService.updateStudent(s.getEmail(),s);		
 	}
 	@RequestMapping(value="/id/{id}", method=RequestMethod.GET)
 	public Student getSudentByID(@PathVariable("id") String id) {

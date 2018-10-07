@@ -25,6 +25,22 @@ public class StudentServiceImpl implements StudentService {
 		System.out.println(r.getId());
 		return r;
 	}
+	
+	@Override
+	public Student getStudentByEmail(String email) {
+		return studentrepo.findOneByEmail(email);
+	}
+	
+	@Override
+	public Student updateStudent(String email,Student s) {
+		Student current=studentrepo.findOneByEmail(email);
+		current.setStudentName(s.getStudentName());
+		current.setAddress(s.getAddress());
+		current.setItNo(s.getItNo());
+		current.setHomeNo(s.getHomeNo());
+		current.setMobileNo(s.getMobileNo());
+		return studentrepo.save(current);
+	}
 
 	@Override
 	public Student getSudentByID(String id){
