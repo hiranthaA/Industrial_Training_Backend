@@ -119,15 +119,15 @@ public class FormServiceImpl implements FormService {
 	@Override
 	public Form_i_3 addFormi3(Form_i_3 c) {
 		System.out.println("this is impl"+c.getStudentId());
-		Form_i_3 exists =  formi3Repo.findOneByStudentEmail(c.getStudentEmail());
-		if(exists!=null){
-			exists.setCgpa(c.getCgpa());
-			exists.setSemester(c.getSemester());
-			exists.setStudentName(c.getStudentName());
-			exists.setYear(c.getYear());
-			exists.setStudentId(c.getStudentId());
-			c=exists;
-		}
+//		Form_i_3 exists =  formi3Repo.findOneByStudentEmail(c.getStudentEmail());
+//		if(exists!=null){
+//			exists.setCgpa(c.getCgpa());
+//			exists.setSemester(c.getSemester());
+//			exists.setStudentName(c.getStudentName());
+//			exists.setYear(c.getYear());
+//			exists.setStudentId(c.getStudentId());
+//			c=exists;
+//		}
 		return formi3Repo.save(c);
 		
 	}

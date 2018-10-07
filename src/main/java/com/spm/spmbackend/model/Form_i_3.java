@@ -15,6 +15,8 @@ public class Form_i_3 {
 	private String studentId;
 	private String studentName;
 	private String studentEmail;
+	private String studentAddress;
+	private String studentMobile;
 
 	private int semester;
 	private int year;
@@ -28,6 +30,9 @@ public class Form_i_3 {
 	private String supervisorTitle;
     private String supervisorDesignation;
     private String supervisorEmail;
+    
+    private String internshipTitle;
+ 	private String specialisation;
     
     private String trainingParty;
     private String description;
@@ -162,6 +167,30 @@ public class Form_i_3 {
 	public void setSupervisorEmail(String supervisorEmail) {
 		this.supervisorEmail = supervisorEmail;
 	}
-	
+	   public String getInternshipTitle() {
+			return internshipTitle;
+		}
+		public void setInternshipTitle(String internshipTitle) {
+			this.internshipTitle = internshipTitle;
+		}
+		public String getSpecialisation() {
+			return specialisation;
+		}
+		public void setSpecialisation(String specialisation) {
+			this.specialisation = specialisation;
+		}
+		public String getStudentAddress() {
+			return studentAddress;
+		}
+		public void setStudentAddress(String studentAddress) {
+			this.studentAddress = studentAddress;
+		}
+		public String getStudentMobile() {
+			return studentMobile;
+		}
+		public void setStudentMobile(String studentMobile) {
+			this.studentMobile = studentMobile;
+		}
+
     
 }
