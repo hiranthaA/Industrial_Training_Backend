@@ -174,9 +174,7 @@ public class FormServiceImpl implements FormService {
 			c.setStudentId(o.getStudentId());
 			c.setStudentName(o.getStudentName());
 			c.setStudentEmail(o.getStudentEmail());
-			c.setSemester(o.getSemester());
-			c.setYear(o.getYear());
-			c.setCgpa(o.getCgpa());
+
 
 			formi3Repo.save(c);
 

@@ -18,9 +18,6 @@ public class Form_i_3 {
 	private String studentAddress;
 	private String studentMobile;
 
-	private int semester;
-	private int year;
-	private double cgpa;
 
 	private String companyName;
 	private String companyContact;
@@ -70,24 +67,6 @@ public class Form_i_3 {
 	}
 	public void setStudentEmail(String studentEmail) {
 		this.studentEmail = studentEmail;
-	}
-	public int getSemester() {
-		return semester;
-	}
-	public void setSemester(int semester) {
-		this.semester = semester;
-	}
-	public int getYear() {
-		return year;
-	}
-	public void setYear(int year) {
-		this.year = year;
-	}
-	public double getCgpa() {
-		return cgpa;
-	}
-	public void setCgpa(double cgpa) {
-		this.cgpa = cgpa;
 	}
 	public String getCompanyName() {
 		return companyName;
