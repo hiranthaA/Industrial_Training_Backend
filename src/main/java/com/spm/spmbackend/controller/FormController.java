@@ -2,6 +2,7 @@ package com.spm.spmbackend.controller;
 
 import java.util.List;
 
+import com.spm.spmbackend.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,9 @@ public class FormController {
 	
 	@Autowired
 	private FormService formservise;
+
+	@Autowired
+	private StudentService studentService;
 	
 	@RequestMapping(value="/formi1", method = RequestMethod.GET)
 	public List<Form_i_1> getFormI1(){
@@ -123,7 +127,14 @@ public class FormController {
 	@RequestMapping(value="/formi3/supervisorEmail/{supID}/status/{status}", method=RequestMethod.GET)
 	public List<Form_i_3> getFormI3BySupervisorAndFormStatus(@PathVariable("status") String status,@PathVariable("supID") String supID) {
 		System.out.println(status+": "+ supID);
-		return  formservise.getFormi3BystatusAndsupervisorEmail(status,supID);
+
+		// setting student names
+		List<Form_i_3> formList = formservise.getFormi3BystatusAndsupervisorEmail(status,supID);
+		for (Form_i_3 form:formList) {
+			form.setStudentName(studentService.getSudentByEmail(form.getStudentEmail()).getStudentName());
+		}
+
+		return formList ;
 		//return c;
 
 
@@ -146,12 +157,20 @@ public class FormController {
 
 	}
 
-	@RequestMapping(value="/formi3/id/{formid}", method=RequestMethod.PUT)
-	public Form_i_3 updateFormI3ByFormStatus(@RequestBody Form_i_3 c, @PathVariable("formid") String formid){
-		System.out.println(formid);
-		return  formservise.updateFormi3ByFormid(formid,c);
-		//return c;
+//	@RequestMapping(value="/formi3/id/{formid}", method=RequestMethod.PUT)
+//	public Form_i_3 updateFormI3ByFormStatus(@RequestBody Form_i_3 c, @PathVariable("formid") String formid){
+//		System.out.println(formid);
+//		return  formservise.updateFormi3ByFormid(formid,c);
+//		//return c;
+//
+//
+//	}
 
+	@RequestMapping(value="/formi3/update", method=RequestMethod.PUT)
+	public Form_i_3 updateFormI3Status(@RequestBody Form_i_3 form){
+		System.out.println(form);
+		return  formservise.updateFormi3Status(form);
+		//return c;
 
 	}
 	

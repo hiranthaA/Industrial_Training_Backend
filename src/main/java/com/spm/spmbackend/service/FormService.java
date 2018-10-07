@@ -24,8 +24,7 @@ public interface FormService {
 	public Form_i_3 getFormi3ByStatus(String status);
 	public Form_i_3 updateFormi3ByFormid(String formid,Form_i_3 c);
 	public Form_i_3 getFormi3BystatusAndstudentEmail( String student);
-	
-	
-	
-	
+
+
+    Form_i_3 updateFormi3Status(Form_i_3 form);
 }
