@@ -7,4 +7,5 @@ import com.spm.spmbackend.model.Student;
 public interface StudentRepository  extends MongoRepository<Student, String> {
 	Student findOneByEmail(String email);
 //	Student findOneAndUpdate(String email,Student s);
+    Student findByid(String id);
 }

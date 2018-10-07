@@ -17,18 +17,17 @@ public class UserServiceImpl implements UserService {
 	public User addUser(User u) {
 		return userepo.insert(u);
 	}
+	
+	@Override
+	public User resetPassword(User u) {
+		return userepo.save(u);
+	}
 
 	@Override
 	public User getUserByNameAndPassword(String username, String password) {
 		return userepo.findOneByEmailAndPassword(username, password);
 	}
 
-	@Override
-	public User updateUser(User u) {
-		User current = userepo.findOneById(u.getId());
-		current.setEmail(u.getEmail());
-		return userepo.save(current);
-	}
 
 	@Override
 	public boolean deleteUser(String id) {
@@ -39,6 +38,19 @@ public class UserServiceImpl implements UserService {
 		else {
 			return true;
 		}
+	}
+	
+	@Override
+	public User getUserByEmail(String email) {
+		return userepo.findOneByEmail(email);
+	}
+	
+
+	@Override
+	public User updateUser(User u) {
+		User current = userepo.findOneById(u.getId());
+		current.setEmail(u.getEmail());
+		return userepo.save(current);
 	}
 
 }

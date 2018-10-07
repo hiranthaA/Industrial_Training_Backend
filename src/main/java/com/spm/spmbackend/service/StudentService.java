@@ -9,4 +9,5 @@ public interface StudentService {
 	Student addStudent(Student s);
 	Student getStudentByEmail(String email);
 	Student updateStudent(String email,Student s);
+	Student getSudentByID(String id);
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.spm.spmbackend.model.Student;
 import com.spm.spmbackend.service.StudentService;
 
-@Controller
+
 @RestController
 @CrossOrigin
 @RequestMapping("/student")
@@ -42,5 +42,14 @@ public class StudentController {
 		System.out.println(s.getEmail());
 		return studentService.updateStudent(s.getEmail(),s);		
 	}
+	@RequestMapping(value="/id/{id}", method=RequestMethod.GET)
+	public Student getSudentByID(@PathVariable("id") String id) {
+		System.out.println(id);
+		return  studentService.getSudentByID(id);
+		//return c;
+		
+		
+	}
+
 
 }
