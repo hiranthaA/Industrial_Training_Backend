@@ -54,7 +54,7 @@ public class FormController {
 	}
 	
 	@RequestMapping(value="/formi1/supervisorEmail/{supID}/status/{status}", method=RequestMethod.GET)
-	public Form_i_1 getFormI1BySupervisorAndFormStatus(@PathVariable("status") String status,@PathVariable("supID") String supID) {
+	public List<Form_i_1> getFormI1BySupervisorAndFormStatus(@PathVariable("status") String status,@PathVariable("supID") String supID) {
 		System.out.println(status+": "+ supID);
 		return  formservise.getFormi1BystatusAndsupervisorEmail(status,supID);
 		//return c;
@@ -102,8 +102,58 @@ public class FormController {
 		
 		
 	}
-	
-	
+
+	@RequestMapping(value="/formi3/{id}", method=RequestMethod.GET)
+	public Form_i_3 getFormI3ByStudentID(@PathVariable("id") String id) {
+		System.out.println(id);
+		return  formservise.getFormi3ByStudentID(id);
+		//return c;
+
+
+	}
+	@RequestMapping(value="/formi3/id/{id}", method=RequestMethod.GET)
+	public Form_i_3 getFormI3ByFormId(@PathVariable("id") String id) {
+		System.out.println(id);
+		return  formservise.getFormI3ByFormId(id);
+		//return c;
+
+
+	}
+
+	@RequestMapping(value="/formi3/supervisorEmail/{supID}/status/{status}", method=RequestMethod.GET)
+	public List<Form_i_3> getFormI3BySupervisorAndFormStatus(@PathVariable("status") String status,@PathVariable("supID") String supID) {
+		System.out.println(status+": "+ supID);
+		return  formservise.getFormi3BystatusAndsupervisorEmail(status,supID);
+		//return c;
+
+
+	}
+	@RequestMapping(value="/formi3/studentEmail/{stdEmail}", method=RequestMethod.GET)
+	public Form_i_3 getFormI3ByStudentAndFormStatus(@PathVariable("stdEmail") String stdEmail) {
+		System.out.println(": "+ stdEmail);
+		return  formservise.getFormi3BystatusAndstudentEmail(stdEmail);
+		//return c;
+
+
+	}
+
+	@RequestMapping(value="/formi3/status/{status}", method=RequestMethod.GET)
+	public Form_i_3 getFormI3ByFormStatus(@PathVariable("status") String status){
+		System.out.println(status);
+		return  formservise.getFormi3ByStatus(status);
+		//return c;
+
+
+	}
+
+	@RequestMapping(value="/formi3/id/{formid}", method=RequestMethod.PUT)
+	public Form_i_3 updateFormI3ByFormStatus(@RequestBody Form_i_3 c, @PathVariable("formid") String formid){
+		System.out.println(formid);
+		return  formservise.updateFormi3ByFormid(formid,c);
+		//return c;
+
+
+	}
 	
 	
 	
