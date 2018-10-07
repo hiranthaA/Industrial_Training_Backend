@@ -8,4 +8,5 @@ public interface UserRepository extends MongoRepository<User,Integer> {
 	User findOneByEmailAndPassword(String email, String password);
 	User findOneById(String id);
 	Long deleteOneById(String id);
+	User findOneByEmail(String email);
 }

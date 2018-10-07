@@ -40,4 +40,14 @@ public class UserController {
 		return usservice.deleteUser(id);
 	}
 	
+	@RequestMapping(value="/getUser/{email}", method=RequestMethod.GET)
+	public User getUserByEmail(@PathVariable("email") String email) {
+		return usservice.getUserByEmail(email);
+	}
+	
+	@RequestMapping(value="/resetPassword", method=RequestMethod.POST)
+	public User resetPassword(@RequestBody User u) {
+		return usservice.resetPassword(u);
+	}
+	
 }
