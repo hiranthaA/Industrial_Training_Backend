@@ -56,8 +56,8 @@ public class FormServiceImpl implements FormService {
 	}
 
 	@Override
-	public Form_i_1 getFormi1BystatusAndsupervisorEmail(String status, String supervisorEmail) {
-		return formi1Repo.findOneByStatusAndSupervisorEmail(status, supervisorEmail);
+	public List<Form_i_1> getFormi1BystatusAndsupervisorEmail(String status, String supervisorEmail) {
+		return formi1Repo.findAllByStatusAndSupervisorEmail(status, supervisorEmail);
 	}
 	
 
@@ -108,7 +108,6 @@ public class FormServiceImpl implements FormService {
 		return formi1Repo.findOneByStudentEmail(student);
 	}
 	
-
 	
 	
 	@Override
@@ -144,8 +143,8 @@ public class FormServiceImpl implements FormService {
 	}
 
 	@Override
-	public Form_i_3 getFormi3BystatusAndsupervisorEmail(String status, String supervisorEmail) {
-		return formi3Repo.findOneByStatusAndSupervisorEmail(status, supervisorEmail);
+	public List<Form_i_3> getFormi3BystatusAndsupervisorEmail(String status, String supervisorEmail) {
+		return formi3Repo.findAllByStatusAndSupervisorEmail(status, supervisorEmail);
 	}
 	
 
@@ -187,6 +186,16 @@ public class FormServiceImpl implements FormService {
 	@Override
 	public Form_i_3 getFormi3BystatusAndstudentEmail( String student) {
 		return formi3Repo.findOneByStudentEmail(student);
+	}
+
+	@Override
+	public Form_i_3 updateFormi3Status(Form_i_3 form) {
+//		Form_i_3 form = new Form_i_3();
+//		form.setFormId(formid);
+//		form.setStatus("COMPLETE");
+		Form_i_3 newForm = getFormI3ByFormId(form.getFormId());
+		newForm.setStatus("COMPLETE");
+		return formi3Repo.save(newForm);
 	}
 
 }
