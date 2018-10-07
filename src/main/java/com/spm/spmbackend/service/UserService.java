@@ -8,4 +8,6 @@ public interface UserService {
 	public User getUserByNameAndPassword(String email, String password);
 	User updateUser(User u);
 	boolean deleteUser(String id);
+	User getUserByEmail(String email);
+	User resetPassword(User u);
 }
