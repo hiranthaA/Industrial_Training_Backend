@@ -7,4 +7,6 @@ public interface StudentService {
 
 	List<Student> getall();
 	Student addStudent(Student s);
+	Student getStudentByEmail(String email);
+	Student updateStudent(String email,Student s);
 }

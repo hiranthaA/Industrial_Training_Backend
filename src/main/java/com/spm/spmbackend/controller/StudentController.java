@@ -3,6 +3,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,12 +25,22 @@ public class StudentController {
 		return studentService.getall();
 	}
 	
+	@RequestMapping(value="/get/{email}", method = RequestMethod.GET)
+	public Student getOneByEmail(@PathVariable("email") String email){
+		return studentService.getStudentByEmail(email);
+	}
+	
+	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public Student addStudent(@RequestBody Student s) {
 		System.out.println(s.getEmail());
-		return studentService.addStudent(s);
-		
-		
+		return studentService.addStudent(s);		
+	}
+	
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	public Student updateStudent(@RequestBody Student s) {
+		System.out.println(s.getEmail());
+		return studentService.updateStudent(s.getEmail(),s);		
 	}
 
 }
